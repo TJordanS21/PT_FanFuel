@@ -29,17 +29,18 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0.75rem 1.5rem;
-		background: #1a1a2e;
+		background: #db0007;
 		color: white;
 		position: sticky;
 		top: 0;
 		z-index: 100;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.header-logo a {
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: white;
+		color: #efd049;
 		text-decoration: none;
 	}
 
@@ -49,7 +50,7 @@
 	}
 
 	.header-nav a {
-		color: #aaa;
+		color: rgba(255, 255, 255, 0.75);
 		text-decoration: none;
 		font-weight: 500;
 		transition: color 0.2s;
@@ -57,11 +58,12 @@
 
 	.header-nav a:hover,
 	.header-nav a.active {
-		color: #ff6b35;
+		color: #efd049;
 	}
 
 	.avatar {
 		font-size: 1.5rem;
 	}
 </style>
+
 
