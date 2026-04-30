@@ -1,42 +1,57 @@
-# sv
+# FanFuel
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Webanwendung für junge Athleten zur Planung von Training und Ernährung. Erstellt im Rahmen des Moduls «Prototyping» an der ZHAW School of Management and Law.
 
-## Creating a project
+## Funktionen (aktueller Stand)
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Dashboard:** Startseite mit dynamischer Tagesanzeige (z.B. "Today it's Match Day") basierend auf dem Trainingsplan in der Datenbank. Anzeige der Mahlzeiten für den aktuellen Tag.
+- **Plan:** Wochenkalender mit farbkodierten Aktivitäten. Aktivitäten können erstellt, bearbeitet und gelöscht werden (CRUD).
+- **Progress:** Seite für Trainingsfortschritt (in Arbeit).
+- **Learn:** Rezeptübersicht und Detailseiten (in Arbeit).
 
-```sh
-# create a new project
-npx sv create my-app
+## Tech Stack
+
+- SvelteKit (mit TypeScript)
+- MongoDB Atlas
+- Vite
+
+## Setup
+
+```bash
+npm install
 ```
 
-To recreate this project with the same configuration:
+`.env`-Datei erstellen (siehe `.env.example`):
 
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --install npm PT_FanFuel
+```
+MONGODB_URI=mongodb+srv://...
 ```
 
-## Developing
+Datenbank mit Beispieldaten füllen:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+npm run seed
+```
 
-```sh
+Entwicklungsserver starten:
+
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Projektstruktur
 
-To create a production version of your app:
-
-```sh
-npm run build
+```
+src/
+  routes/         → Seiten (Dashboard, Plan, Progress, Learn)
+  lib/
+    components/   → Wiederverwendbare Komponenten (Header, etc.)
+    server/       → Datenbankverbindung
+    types.ts      → TypeScript-Interfaces
+scripts/
+  seed.ts         → Seed-Skript für Beispieldaten
 ```
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Wird mit Netlify deployt (Konfiguration folgt).
