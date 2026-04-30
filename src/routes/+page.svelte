@@ -1,4 +1,7 @@
 <script lang="ts">
+	import SpotifySuggestion from '$lib/components/SpotifySuggestion.svelte';
+	import MoodLogger from '$lib/components/MoodLogger.svelte';
+
 	let { data } = $props();
 </script>
 
@@ -21,6 +24,11 @@
 		{:else}
 			<p class="empty">No meals planned for today. Add some in the Learn section!</p>
 		{/if}
+	</div>
+
+	<div class="dashboard-extras">
+		<MoodLogger />
+		<SpotifySuggestion activityType={data.activityType} />
 	</div>
 </section>
 
@@ -75,5 +83,16 @@
 
 	.empty {
 		color: var(--color-text-muted);
+	}
+
+	.dashboard-extras {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.dashboard-extras { grid-template-columns: 1fr; }
 	}
 </style>
