@@ -29,18 +29,18 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0.75rem 1.5rem;
-		background: #db0007;
-		color: white;
+		background: #ffffff;
+		color: #1a1a1a;
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid #e0e0e0;
 	}
 
 	.header-logo a {
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: #efd049;
+		color: #db0007;
 		text-decoration: none;
 	}
 
@@ -50,7 +50,7 @@
 	}
 
 	.header-nav a {
-		color: rgba(255, 255, 255, 0.75);
+		color: #666;
 		text-decoration: none;
 		font-weight: 500;
 		transition: color 0.2s;
@@ -58,12 +58,13 @@
 
 	.header-nav a:hover,
 	.header-nav a.active {
-		color: #efd049;
+		color: #db0007;
 	}
 
 	.avatar {
 		font-size: 1.5rem;
 	}
 </style>
+
 
 
