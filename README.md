@@ -78,7 +78,34 @@
 
 ## 4. Erweiterungen [Optional]
 
-_[wird ergänzt, sobald Erweiterungen umgesetzt sind]_
+### 4.1 Spotify-Playlist-Vorschläge
+- **Beschreibung & Nutzen:** Auf dem Dashboard wird basierend auf der heutigen Aktivität eine passende Spotify-Playlist vorgeschlagen (z.B. «Gym Motivation» bei Gym-Tag).
+- **Wo umgesetzt:**
+  - **Frontend:** Komponente `SpotifySuggestion.svelte`, eingebunden in `src/routes/+page.svelte`
+  - **Backend:** Aktivitätstyp wird in `+page.server.ts` an das Frontend übergeben
+- **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
+
+### 4.2 Mood Logging
+- **Beschreibung & Nutzen:** User können auf dem Dashboard ihre tägliche Stimmung erfassen (5-stufige Skala). Daten werden in MongoDB gespeichert.
+- **Wo umgesetzt:**
+  - **Frontend:** Komponente `MoodLogger.svelte`, eingebunden in `src/routes/+page.svelte`
+  - **Backend:** Form Action `logMood` in `src/routes/+page.server.ts`
+  - **Datenbank:** Collection `moods`
+- **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
+
+### 4.3 Performance-Visualisierung mit Charts
+- **Beschreibung & Nutzen:** Auf der Progress-Seite werden Trainingsstatistiken visuell dargestellt (Liniendiagramm für wöchentliche Entwicklung, Doughnut-Chart für Aktivitätstypen-Verteilung, Streak-Anzeige).
+- **Wo umgesetzt:**
+  - **Frontend:** `src/routes/progress/+page.svelte` mit Chart.js
+  - **Backend:** Aggregation der Aktivitätsdaten in `src/routes/progress/+page.server.ts`
+- **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
+
+### 4.4 Dynamischer Dashboard-Header
+- **Beschreibung & Nutzen:** Die Überschrift auf dem Dashboard ändert sich automatisch basierend auf dem heutigen Trainingsplan (z.B. «Today it's Match Day 🏆»).
+- **Wo umgesetzt:**
+  - **Backend:** Logik in `src/routes/+page.server.ts`, Abfrage der heutigen Aktivität aus MongoDB
+  - **Frontend:** Anzeige in `src/routes/+page.svelte`
+- **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
 
 ## 5. Projektorganisation [Optional]
 
