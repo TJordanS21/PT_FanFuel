@@ -69,7 +69,7 @@
   - Datenbankanbindung: `src/lib/server/db.ts`
   - Typen: `src/lib/types.ts` (Activity, Recipe, Meal, MoodEntry)
 - **Daten & Schnittstellen:** MongoDB Atlas mit Collections `activities`, `recipes`, `meals`. Daten werden serverseitig via SvelteKit Load-Funktionen und Form Actions abgerufen/gespeichert.
-- **Deployment:** _[URL folgt, Netlify geplant]_
+- **Deployment:** Netlify (Konfiguration via `netlify.toml` und `@sveltejs/adapter-netlify`). URL: _[wird nach erstem Deploy ergänzt]_
 - **Besondere Entscheidungen:** Seed-Skript für Beispieldaten, um die App ohne manuellen DB-Eintrag testen zu können.
 
 ### 3.5 Validate
