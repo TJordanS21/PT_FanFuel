@@ -56,6 +56,21 @@ button {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
+a {
+	color: var(--color-primary);
+}
 
+h1, h2, h3 {
+	color: var(--color-text);
+}
+
+input, select, textarea {
+	font-family: inherit;
+	font-size: 0.875rem;
+}
+
+.btn-primary:active {
+	transform: scale(0.97);
+}
 
 
