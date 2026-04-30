@@ -17,24 +17,35 @@
 
 ## 1. Ausgangslage
 
-- **Problem:** Junge Athleten haben Schwierigkeiten, Training und Ernährung koordiniert zu planen. Informationen sind über verschiedene Apps verteilt und es fehlt ein zentraler Überblick über den Tagesablauf.
-- **Ziele:** Eine einfache Webanwendung, die Trainingsplanung und Ernährungsempfehlungen an einem Ort zusammenbringt.
-- **Primäre Zielgruppe:** Junge Sportler (16–25 Jahre), die ihr Training und ihre Ernährung besser organisieren möchten.
+- **Problem:** Die Ernährung präzise auf unterschiedliche Sportarten (z.B. Krafttraining vs. Fussballmatch) abzustimmen, ist für viele Hobby-Athleten schwierig. Berufstätige oder Studierende haben oft wenig Zeit, komplexe Ernährungspläne zu verfolgen oder sich mit Makronährstoffen auseinanderzusetzen. Bestehende Apps wie MyFitnessPal fokussieren stark auf Kalorienzählen, was viele Nutzer auf Dauer demotiviert. Es fehlt eine Lösung, die «Aktivität zuerst» denkt – also Rezepte basierend auf der Sportart vorschlägt, anstatt nur Zahlen zu loggen.
+- **Ziele:** Eine Webanwendung, die Trainingsplanung und Ernährungsempfehlungen an einem Ort zusammenbringt und dabei den Entscheidungsprozess bei der täglichen Essenswahl vereinfacht.
+- **Primäre Zielgruppe:** Hobby-Athleten (Fussballer, Gym-Gänger) im Alter von 18–35 Jahren, die ihre Leistung optimieren wollen. Die App wird meist in der Küche während der Planung oder kurz vor dem Training zur Motivation genutzt.
 
 ## 2. Lösungsidee
 
 - **Kernfunktionalität:**
   - Wochenkalender zur Trainingsplanung (Erstellen, Bearbeiten, Löschen von Aktivitäten)
-  - Dashboard mit tagesabhängiger Anzeige (z.B. «Today it's Match Day»)
+  - Dashboard mit tagesabhängiger Anzeige (z.B. «Today it's Match Day») und passenden Rezeptvorschlägen
   - Rezeptübersicht und Detailseiten für sportgerechte Ernährung
-- **Abgrenzung:** Kein Login/Registrierung, keine Anbindung an Fitness-Tracker, kein Social-Media-Feature.
+  - Spotify-Playlist-Vorschläge basierend auf der geplanten Aktivität
+  - Stimmungserfassung (Mood Logging) zur Verknüpfung von Wohlbefinden und Training
+- **Annahmen:**
+  - HMW 1: Wie könnten wir Sportler:innen dabei unterstützen, ihre Mahlzeitenplanung so zu automatisieren, dass sie sich dynamisch an ihren wöchentlichen Trainingsplan anpasst?
+  - HMW 2: Wie könnten wir die Motivation für eine gesunde Ernährung steigern, indem wir die Mahlzeitenplanung mit personalisierten Musik-Playlists verknüpfen?
+  - HMW 3: Wie könnten wir den Entscheidungsprozess bei der Rezeptwahl vereinfachen, damit Nutzer:innen basierend auf ihrer Aktivität performante Mahlzeiten erhalten?
+- **Abgrenzung:** Kein Login/Registrierung, keine Anbindung an Fitness-Tracker, kein Social-Media-Feature, kein komplexes Kalorienzählen.
 
 ## 3. Vorgehen & Artefakte
 
 ### 3.1 Understand & Define
 
-- **Zielgruppenverständnis:** _[wird ergänzt]_
-- **Wesentliche Erkenntnisse:** _[wird ergänzt]_
+- **Zielgruppenverständnis:** Hobby-Athleten (18–35 Jahre), die neben Beruf oder Studium trainieren. Hauptbedürfnis: schnelle, zielorientierte Rezeptvorschläge, die spezifisch auf die nächste Einheit vorbereiten (z.B. «Match Day» vs. «Rest Day»).
+- **Wesentliche Erkenntnisse:**
+  - Etablierte Apps wie MyFitnessPal werden als zu technisch und demotivierend empfunden (Fokus auf Kalorienzählen).
+  - Es fehlt eine Lösung, die «Aktivität zuerst» denkt und Rezepte basierend auf der Sportart vorschlägt.
+  - Moderne Web-APIs (Spotify, Rezept-APIs) ermöglichen eine nahtlose Integration von Lifestyle-Elementen.
+  - Dashboards mit «Streaks» und Fortschrittsvisualisierung fördern die langfristige Nutzerbindung.
+  - Zentrale Herausforderungen der Zielgruppe: Zeitmangel nach der Arbeit, Überforderung durch komplexe Tracking-Apps, «Decision Fatigue» bei der täglichen Essenswahl.
 
 ### 3.2 Sketch
 
