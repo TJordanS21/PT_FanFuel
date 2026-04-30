@@ -1,3 +1,4 @@
+<img width="3024" height="4032" alt="IMG_0667" src="https://github.com/user-attachments/assets/f8388a10-5928-41d4-8e83-afc2ac8abb4a" />
 # Projektdokumentation - FanFuel
 
 ## Inhaltsverzeichnis
@@ -49,14 +50,23 @@
 
 ### 3.2 Sketch
 
-- **Variantenüberblick:** _[wird ergänzt]_
-- **Skizzen:** _[wird ergänzt]_
+- **Variantenüberblick:** <img width="3024" height="4032" alt="IMG_0667" src="https://github.com/user-attachments/assets/3994011b-ce32-44a2-9dcd-b576848f95e7" />
+
+- **Skizzen:** <img width="3024" height="4032" alt="IMG_0670" src="https://github.com/user-attachments/assets/c4387de0-f04b-4d72-9935-c8fcf0521fe6" />
+<img width="3024" height="4032" alt="IMG_0669" src="https://github.com/user-attachments/assets/5007e5f4-9e5d-4e36-b8ce-c988854f62bc" />
+
 
 ### 3.3 Decide
 
 - **Gewählte Variante & Begründung:** _[wird ergänzt]_
 - **End-to-End-Ablauf:** _[wird ergänzt]_
-- **Mockup:** _[wird ergänzt]_
+- **Mockup:** <img width="845" height="802" alt="image" src="https://github.com/user-attachments/assets/1f8b2f54-746b-4527-89a5-40d2a6dd2278" />
+<img width="844" height="805" alt="image" src="https://github.com/user-attachments/assets/b98b30ac-3b4a-4e30-8f71-44ae7067de1d" />
+<img width="844" height="804" alt="image" src="https://github.com/user-attachments/assets/7cb83651-03b0-4e6b-adb2-eaa01db2a3e5" />
+<img width="842" height="802" alt="image" src="https://github.com/user-attachments/assets/51eb96da-38d6-46b8-a8c8-e15da22afc55" />
+
+
+
 
 ### 3.4 Prototype
 
