@@ -1,4 +1,3 @@
-<img width="3024" height="4032" alt="IMG_0667" src="https://github.com/user-attachments/assets/f8388a10-5928-41d4-8e83-afc2ac8abb4a" />
 # Projektdokumentation - FanFuel
 
 ## Inhaltsverzeichnis
