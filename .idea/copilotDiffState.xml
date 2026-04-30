@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/.env.example">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.env.example" />
+              <option name="updatedContent" value="MONGODB_URI=mongodb+srv://&lt;username&gt;:&lt;password&gt;@&lt;cluster&gt;.mongodb.net/fanfuel?retryWrites=true&amp;w=majority&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/lib/server/db.ts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/lib/server/db.ts" />
+              <option name="updatedContent" value="import { MongoClient } from 'mongodb';&#10;import { MONGODB_URI } from '$env/static/private';&#10;&#10;const client = new MongoClient(MONGODB_URI);&#10;&#10;export async function startMongo() {&#10;&#9;await client.connect();&#10;&#9;return client.db();&#10;}&#10;&#10;const db = client.db();&#10;&#10;export default db;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
