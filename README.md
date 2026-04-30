@@ -61,7 +61,7 @@
 
 #### 3.4.2. Umsetzung (Technik)
 
-- **Technologie-Stack:** SvelteKit, TypeScript, MongoDB Atlas, Vite
+- **Technologie-Stack:** SvelteKit, TypeScript, MongoDB Atlas, Vite, Chart.js
 - **Tooling:** WebStorm, GitHub
 - **Struktur & Komponenten:**
   - Seiten: `/` (Dashboard), `/plan`, `/progress`, `/learn`, `/learn/[id]`
