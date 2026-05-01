@@ -78,10 +78,10 @@
 #### 3.4.1. Entwurf (Design)
 
 - **Informationsarchitektur:**
-  - Dashboard (Startseite) → Tagesübersicht mit Mahlzeiten
+  - Dashboard (Startseite) → Tagesübersicht mit automatisch vorgeschlagenen Mahlzeiten basierend auf Aktivitätstyp
   - Plan → Wochenkalender mit CRUD für Aktivitäten
-  - Progress → Trainingsfortschritt (in Arbeit)
-  - Learn → Rezeptliste mit Detailseiten
+  - Progress → Trainingsfortschritt und Mood-Trend-Visualisierung
+  - Learn → Rezeptliste mit Detailseiten (inkl. Makronährstoffe und Activity-Tags)
 - **User Interface Design:** _[Screenshots werden ergänzt]_
 - **Designentscheidungen:** Helles, minimalistisches Design. Rote Akzentfarbe für Buttons und wichtige Elemente. Klare Navigation über Header.
 
@@ -91,10 +91,10 @@
 - **Tooling:** WebStorm, GitHub
 - **Struktur & Komponenten:**
   - Seiten: `/` (Dashboard), `/plan`, `/progress`, `/learn`, `/learn/[id]`
-  - Komponenten: `Header.svelte`
+  - Komponenten: `Header.svelte`, `MoodLogger.svelte`, `SpotifySuggestion.svelte`
   - Datenbankanbindung: `src/lib/server/db.ts`
-  - Typen: `src/lib/types.ts` (Activity, Recipe, Meal, MoodEntry)
-- **Daten & Schnittstellen:** MongoDB Atlas mit Collections `activities`, `recipes`, `meals`. Daten werden serverseitig via SvelteKit Load-Funktionen und Form Actions abgerufen/gespeichert.
+  - Typen: `src/lib/types.ts` (Activity, Recipe, MoodEntry)
+- **Daten & Schnittstellen:** MongoDB Atlas mit Collections `activities`, `recipes`, `moods`. Rezepte enthalten `activityTags` zur automatischen Zuordnung zu Aktivitätstypen. Daten werden serverseitig via SvelteKit Load-Funktionen und Form Actions abgerufen/gespeichert.
 - **Deployment:** Netlify (Konfiguration via `netlify.toml` und `@sveltejs/adapter-netlify`). URL: _[wird nach erstem Deploy ergänzt]_
 - **Besondere Entscheidungen:** Seed-Skript für Beispieldaten, um die App ohne manuellen DB-Eintrag testen zu können.
 
@@ -112,21 +112,29 @@
 - **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
 
 ### 4.2 Mood Logging
-- **Beschreibung & Nutzen:** User können auf dem Dashboard ihre tägliche Stimmung erfassen (5-stufige Skala). Daten werden in MongoDB gespeichert.
+- **Beschreibung & Nutzen:** User können auf dem Dashboard ihre tägliche Stimmung über einen Slider (1–5) erfassen. Nach dem Loggen wird ein personalisierter Wellness-Tipp angezeigt. Die Mood-Daten werden auf der Progress-Seite als Trend-Chart visualisiert (letzte 14 Tage) und der Durchschnitt als Statistik-Karte dargestellt.
 - **Wo umgesetzt:**
-  - **Frontend:** Komponente `MoodLogger.svelte`, eingebunden in `src/routes/+page.svelte`
-  - **Backend:** Form Action `logMood` in `src/routes/+page.server.ts`
+  - **Frontend:** Komponente `MoodLogger.svelte` (Slider + Wellness-Tipps), eingebunden in `src/routes/+page.svelte`; Mood-Trend-Chart in `src/routes/progress/+page.svelte`
+  - **Backend:** Form Action `logMood` in `src/routes/+page.server.ts`; Mood-Aggregation in `src/routes/progress/+page.server.ts`
   - **Datenbank:** Collection `moods`
 - **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
 
 ### 4.3 Performance-Visualisierung mit Charts
-- **Beschreibung & Nutzen:** Auf der Progress-Seite werden Trainingsstatistiken visuell dargestellt (Liniendiagramm für wöchentliche Entwicklung, Doughnut-Chart für Aktivitätstypen-Verteilung, Streak-Anzeige).
+- **Beschreibung & Nutzen:** Auf der Progress-Seite werden Trainingsstatistiken visuell dargestellt (Liniendiagramm für wöchentliche Entwicklung, Doughnut-Chart für Aktivitätstypen-Verteilung, Streak-Anzeige, Durchschnitts-Mood, Mood-Trend-Chart mit farbcodierten Punkten).
 - **Wo umgesetzt:**
   - **Frontend:** `src/routes/progress/+page.svelte` mit Chart.js
-  - **Backend:** Aggregation der Aktivitätsdaten in `src/routes/progress/+page.server.ts`
+  - **Backend:** Aggregation der Aktivitäts- und Mood-Daten in `src/routes/progress/+page.server.ts`
 - **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
 
-### 4.4 Dynamischer Dashboard-Header
+### 4.4 Automatische Mahlzeitenvorschläge
+- **Beschreibung & Nutzen:** Das Dashboard schlägt automatisch passende Rezepte (Frühstück, Mittagessen, Abendessen, Snack) basierend auf dem heutigen Aktivitätstyp vor. Rezepte sind mit `activityTags` versehen, sodass z.B. an einem Gym-Tag proteinreiche Mahlzeiten und an einem Match-Day kohlenhydratreiche Gerichte empfohlen werden. Kein manuelles Hinzufügen von Mahlzeiten nötig.
+- **Wo umgesetzt:**
+  - **Frontend:** Meal-Cards in `src/routes/+page.svelte` mit Makronährstoff-Anzeige
+  - **Backend:** Rezept-Query mit `activityTags`-Filter in `src/routes/+page.server.ts`
+  - **Datenbank:** `activityTags`-Feld in der `recipes`-Collection
+- **Aus Evaluation abgeleitet?:** Nein, geplante Erweiterung.
+
+### 4.5 Dynamischer Dashboard-Header
 - **Beschreibung & Nutzen:** Die Überschrift auf dem Dashboard ändert sich automatisch basierend auf dem heutigen Trainingsplan (z.B. «Today it's Match Day 🏆»).
 - **Wo umgesetzt:**
   - **Backend:** Logik in `src/routes/+page.server.ts`, Abfrage der heutigen Aktivität aus MongoDB
