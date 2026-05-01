@@ -112,8 +112,36 @@
 	.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
 	.activity-form label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem; color: var(--color-text-muted); }
 	.activity-form input, .activity-form select, .activity-form textarea {
-		background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border);
+		background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border);
 		border-radius: 8px; padding: 0.6rem 0.75rem; font-size: 0.875rem;
+	}
+	.activity-form select {
+		appearance: none;
+		-webkit-appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		padding-right: 2rem;
+	}
+	/* Inline edit form inside activity tags */
+	.activity-tag input, .activity-tag select, .activity-tag textarea {
+		width: 100%;
+		background: var(--color-surface);
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		padding: 0.4rem 0.5rem;
+		font-size: 0.75rem;
+		font-family: inherit;
+		margin-bottom: 0.25rem;
+	}
+	.activity-tag select {
+		appearance: none;
+		-webkit-appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.5rem center;
+		padding-right: 1.5rem;
 	}
 	.week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; }
 	.day-column { display: flex; flex-direction: column; gap: 0.5rem; }
