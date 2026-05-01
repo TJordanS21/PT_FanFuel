@@ -70,7 +70,7 @@
 				data: {
 					labels: data.moodTrend.map((m: { date: string }) => {
 						const d = new Date(m.date + 'T00:00:00');
-						return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+						return d.toLocaleDateString('de-CH', { day: 'numeric', month: 'short' });
 					}),
 					datasets: [{
 						label: 'Mood',

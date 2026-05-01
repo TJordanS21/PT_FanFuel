@@ -26,7 +26,7 @@ export const load: PageServerLoad = async () => {
 		const dateStr = d.toISOString().split('T')[0];
 		weekDays.push({
 			date: dateStr,
-			label: d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }),
+			label: d.toLocaleDateString('de-CH', { weekday: 'short', month: 'short', day: 'numeric' }),
 			activities: JSON.parse(JSON.stringify(activities.filter(a => a.date === dateStr)))
 		});
 	}
