@@ -21,15 +21,10 @@ export interface Recipe {
 	category: 'breakfast' | 'lunch' | 'dinner' | 'snack';
 	prepTime: number; // minutes
 	calories?: number;
-}
-
-export interface Meal {
-	_id?: ObjectId;
-	recipeId: ObjectId;
-	date: string;
-	mealType: 'breakfast' | 'lunch' | 'dinner' | 'snack';
-	title: string;
-	image?: string;
+	protein?: number; // grams
+	carbs?: number; // grams
+	/** Activity types this recipe is ideal for */
+	activityTags: Array<'gym' | 'match' | 'cardio' | 'recovery' | 'rest'>;
 }
 
 export interface MoodEntry {
