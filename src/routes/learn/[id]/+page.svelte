@@ -10,11 +10,25 @@
 		<h1>{data.recipe.title}</h1>
 		<p>{data.recipe.description}</p>
 		<div class="meta">
-			<span>&#9201; {data.recipe.prepTime} min</span>
+			<span>⏱ {data.recipe.prepTime} min</span>
 			{#if data.recipe.calories}
-				<span>&#128293; {data.recipe.calories} kcal</span>
+				<span>🔥 {data.recipe.calories} kcal</span>
+			{/if}
+			{#if data.recipe.protein}
+				<span>💪 {data.recipe.protein}g protein</span>
+			{/if}
+			{#if data.recipe.carbs}
+				<span>🍞 {data.recipe.carbs}g carbs</span>
 			{/if}
 		</div>
+		{#if data.recipe.activityTags?.length}
+			<div class="activity-tags">
+				<span class="tags-label">Best for:</span>
+				{#each data.recipe.activityTags as tag}
+					<span class="tag">{tag}</span>
+				{/each}
+			</div>
+		{/if}
 	</div>
 
 	<div class="recipe-body">
@@ -47,6 +61,9 @@
 	.recipe-header h1 { margin: 1rem 0 0.5rem; }
 	.recipe-header p { color: var(--color-text-muted); }
 	.meta { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.875rem; }
+	.activity-tags { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-top: 1rem; flex-wrap: wrap; }
+	.tags-label { font-size: 0.8rem; color: var(--color-text-muted); }
+	.tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 10px; background: rgba(219, 0, 7, 0.08); color: var(--color-primary); text-transform: capitalize; font-weight: 500; }
 	.recipe-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 	.recipe-body h2 { margin-bottom: 0.75rem; font-size: 1.1rem; }
 	.recipe-body ul, .recipe-body ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }

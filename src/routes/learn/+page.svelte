@@ -13,11 +13,21 @@
 				<h3>{recipe.title}</h3>
 				<p>{recipe.description}</p>
 				<div class="recipe-meta">
-					<span>&#9201; {recipe.prepTime} min</span>
+					<span>⏱ {recipe.prepTime} min</span>
 					{#if recipe.calories}
-						<span>&#128293; {recipe.calories} kcal</span>
+						<span>🔥 {recipe.calories} kcal</span>
+					{/if}
+					{#if recipe.protein}
+						<span>💪 {recipe.protein}g</span>
 					{/if}
 				</div>
+				{#if recipe.activityTags?.length}
+					<div class="recipe-tags">
+						{#each recipe.activityTags as tag}
+							<span class="tag">{tag}</span>
+						{/each}
+					</div>
+				{/if}
 			</a>
 		{:else}
 			<p>No recipes found. Run the seed script to add sample data.</p>
@@ -35,4 +45,6 @@
 	.recipe-card h3 { margin: 0.5rem 0 0.25rem; }
 	.recipe-card p { font-size: 0.875rem; color: var(--color-text-muted); }
 	.recipe-meta { display: flex; gap: 1rem; font-size: 0.8rem; margin-top: 0.75rem; color: var(--color-text-muted); }
+	.recipe-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+	.tag { font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 10px; background: var(--color-bg); color: var(--color-text-muted); text-transform: capitalize; }
 </style>

@@ -112,8 +112,8 @@
 	.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
 	.activity-form label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.875rem; color: var(--color-text-muted); }
 	.activity-form input, .activity-form select, .activity-form textarea {
-		background: var(--color-bg); color: var(--color-text); border: 1px solid #333;
-		border-radius: 6px; padding: 0.5rem; font-size: 0.875rem;
+		background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border);
+		border-radius: 8px; padding: 0.6rem 0.75rem; font-size: 0.875rem;
 	}
 	.week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; }
 	.day-column { display: flex; flex-direction: column; gap: 0.5rem; }
