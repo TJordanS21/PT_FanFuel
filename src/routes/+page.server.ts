@@ -1,31 +1,45 @@
 import type { PageServerLoad, Actions } from './$types';
 import db from '$lib/server/db';
-import type { Activity, Meal } from '$lib/types';
+import type { Activity, Recipe } from '$lib/types';
 import { fail } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
 	const today = new Date().toISOString().split('T')[0];
 
 	const todayActivity = await db.collection<Activity>('activities').findOne({ date: today });
-	const meals = await db.collection<Meal>('meals').find({ date: today }).toArray();
 
 	// Dynamic header message
-	let headerMessage = "Today it's a Rest Day";
-	if (todayActivity) {
-		switch (todayActivity.type) {
-			case 'match': headerMessage = "Today it's Match Day 🏆"; break;
-			case 'gym': headerMessage = "Today it's Gym Day 💪"; break;
-			case 'cardio': headerMessage = "Today it's Cardio Day 🏃"; break;
-			case 'recovery': headerMessage = "Today it's Recovery Day 🧘"; break;
-			default: headerMessage = "Today it's a Rest Day 😴";
-		}
+	let headerMessage = "Today it's a Rest Day 😴";
+	const activityType = todayActivity?.type || 'rest';
+	const headerMap: Record<string, string> = {
+		match: "Today it's Match Day 🏆",
+		gym: "Today it's Gym Day 💪",
+		cardio: "Today it's Cardio Day 🏃",
+		recovery: "Today it's Recovery Day 🧘"
+	};
+	if (todayActivity && headerMap[activityType]) {
+		headerMessage = headerMap[activityType];
 	}
+
+	// Auto-suggest meals based on today's activity type
+	const suggestedRecipes = await db.collection<Recipe>('recipes')
+		.find({ activityTags: activityType })
+		.toArray();
+
+	// Pick one per category for a balanced day
+	const categories: Array<'breakfast' | 'lunch' | 'dinner' | 'snack'> = ['breakfast', 'lunch', 'dinner', 'snack'];
+	const suggestions = categories
+		.map(cat => {
+			const matches = suggestedRecipes.filter(r => r.category === cat);
+			return matches.length > 0 ? matches[Math.floor(Math.random() * matches.length)] : null;
+		})
+		.filter(Boolean);
 
 	return {
 		headerMessage,
+		activityType,
 		todayActivity: todayActivity ? JSON.parse(JSON.stringify(todayActivity)) : null,
-		meals: JSON.parse(JSON.stringify(meals)),
-		activityType: todayActivity?.type || 'rest'
+		suggestedMeals: JSON.parse(JSON.stringify(suggestions))
 	};
 };
 
