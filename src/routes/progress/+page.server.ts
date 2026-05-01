@@ -55,10 +55,32 @@ export const load: PageServerLoad = async () => {
 		}
 	}
 
+	// Mood trend (last 14 days)
+	const twoWeeksAgo = new Date(today);
+	twoWeeksAgo.setDate(today.getDate() - 13);
+	const moodStart = twoWeeksAgo.toISOString().split('T')[0];
+
+	const moods = await db.collection('moods')
+		.find({ date: { $gte: moodStart, $lte: endDate } })
+		.sort({ date: 1 })
+		.toArray();
+
+	const moodTrend = moods.map(m => ({
+		date: m.date,
+		mood: m.mood
+	}));
+
+	// Average mood
+	const avgMood = moods.length > 0
+		? Math.round((moods.reduce((s, m) => s + m.mood, 0) / moods.length) * 10) / 10
+		: null;
+
 	return {
 		weeklyData,
 		typeBreakdown,
 		streak,
-		totalActivities: activities.filter(a => a.type !== 'rest').length
+		totalActivities: activities.filter(a => a.type !== 'rest').length,
+		moodTrend: JSON.parse(JSON.stringify(moodTrend)),
+		avgMood
 	};
 };
