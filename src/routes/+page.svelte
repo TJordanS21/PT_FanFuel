@@ -109,7 +109,7 @@
 
 	.meals-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		grid-template-columns: repeat(4, 1fr);
 		gap: 1rem;
 	}
 
@@ -185,6 +185,7 @@
 
 	@media (max-width: 768px) {
 		.dashboard-extras { grid-template-columns: 1fr; }
+		.meals-grid { grid-template-columns: repeat(2, 1fr); }
 		.hero h1 { font-size: 1.6rem; }
 	}
 </style>
