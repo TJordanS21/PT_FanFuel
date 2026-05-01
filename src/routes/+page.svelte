@@ -53,7 +53,7 @@
 	</div>
 
 	<div class="dashboard-extras">
-		<MoodLogger />
+		<MoodLogger todayMood={data.todayMood} />
 		<SpotifySuggestion activityType={data.activityType} />
 	</div>
 </section>

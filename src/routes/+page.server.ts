@@ -35,11 +35,18 @@ export const load: PageServerLoad = async () => {
 		})
 		.filter(Boolean);
 
+	// Load today's mood (if already logged)
+	const todayMoodEntry = await db.collection('moods').findOne(
+		{ date: today },
+		{ sort: { _id: -1 } }
+	);
+
 	return {
 		headerMessage,
 		activityType,
 		todayActivity: todayActivity ? JSON.parse(JSON.stringify(todayActivity)) : null,
-		suggestedMeals: JSON.parse(JSON.stringify(suggestions))
+		suggestedMeals: JSON.parse(JSON.stringify(suggestions)),
+		todayMood: todayMoodEntry?.mood ?? null
 	};
 };
 
