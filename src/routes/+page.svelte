@@ -179,8 +179,15 @@
 	.dashboard-extras {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		align-items: stretch;
 		gap: 1rem;
 		margin-top: 2rem;
+	}
+
+	.dashboard-extras > :global(*) {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	@media (max-width: 768px) {
