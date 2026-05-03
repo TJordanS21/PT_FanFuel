@@ -14,6 +14,7 @@
 5. [Projektorganisation [Optional]](#5-projektorganisation-optional)
 6. [KI-Deklaration](#6-ki-deklaration)
 7. [Anhang [Optional]](#7-anhang-optional)
+8. [Lizenz](#8-lizenz)
 
 ## 1. Ausgangslage
 
@@ -150,17 +151,24 @@
 
 ### 6.1 KI-Tools
 
-- **Eingesetzte Tools**: GitHub Copilot (in IDE)
-- **Zweck & Umfang**: Unterstützung bei Codevorschlägen, Boilerplate-Generierung und Fehlerbehebung.
-- **Eigene Leistung (Abgrenzung):** Konzept, Architektur, Design-Entscheidungen und Testing eigenständig erarbeitet. KI-Vorschläge wurden geprüft und angepasst.
+- **Eingesetzte Tools**: GitHub Copilot (Chat + Inline-Vorschläge, Agent-Modus)
+- **Zweck & Umfang**: Der Grossteil des Codes wurde mit KI-Unterstützung geschrieben. Copilot wurde verwendet für: Projektstruktur-Aufbau, Implementierung der Seiten und Komponenten, MongoDB-Queries, CSS-Styling, Seed-Skript, Debugging und Refactoring. Die KI hat dabei oft ganze Dateien oder grössere Codeblöcke generiert, die dann reviewed und bei Bedarf angepasst wurden.
+- **Eigene Leistung (Abgrenzung):** Eigenständig erarbeitet wurden: die Projektidee und das Konzept, die Zielgruppenanalyse, Sketches und Mockups, die Architektur-Entscheidungen (Tech-Stack-Wahl, Datenmodell), das Deployment-Setup, sowie das Testing und die finale Qualitätskontrolle. Jeder KI-generierte Code wurde verstanden, validiert und allenfalls angepasst.
 
 ### 6.2 Prompt-Vorgehen
 
-Copilot wurde hauptsächlich für Inline-Vorschläge beim Programmieren verwendet. Gelegentlich wurden Chat-Prompts für spezifische Implementierungsfragen genutzt (z.B. MongoDB-Queries, SvelteKit Form Actions).
+- **Agent-Modus:** Für grössere Features wurde der Copilot-Agent-Modus genutzt.
+- **Chat-Prompts:** Für spezifische Fragen zu SvelteKit-Patterns, MongoDB-Aggregationen und CSS-Layout.
+- **Inline-Vorschläge:** Für kleinere Ergänzungen und Boilerplate beim manuellen Coden.
+- **Kontext-Datei:** Eine `AGENT.md`-Datei wurde erstellt, um dem KI-Agenten konsistenten Projektkontext zu geben (Conventions, Tech-Stack, Patterns).
 
 ### 6.3 Reflexion
 
-KI-Unterstützung hat die Entwicklung beschleunigt, insbesondere bei repetitivem Code und Boilerplate. Grenzen zeigten sich bei projektspezifischer Logik, die manuell angepasst werden musste. Alle generierten Codevorschläge wurden auf Korrektheit geprüft.
+KI war ein zentrales Werkzeug in diesem Projekt und hat die Entwicklungsgeschwindigkeit massiv erhöht. Wichtig war dabei, jeden generierten Code zu verstehen und die Architektur-Entscheidungen selbst zu treffen. Grenzen zeigte die KI bei sehr projektspezifischer Logik, visuellen Design-Entscheidungen und beim Verständnis des Gesamtkontexts über viele Dateien hinweg – hier war menschliches Eingreifen nötig.
+
+## 8. Lizenz
+
+Dieses Projekt steht unter der [MIT-Lizenz](./LICENSE).
 
 ## 7. Anhang [Optional]
 
