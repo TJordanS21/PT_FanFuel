@@ -44,6 +44,7 @@
 	.spotify-card {
 		display: flex;
 		flex-direction: column;
+		flex: 1;
 	}
 	.spotify-card h3 {
 		margin-bottom: 0.75rem;
@@ -52,5 +53,6 @@
 	.spotify-card iframe {
 		flex: 1;
 		min-height: 152px;
+		border-radius: 12px;
 	}
 </style>

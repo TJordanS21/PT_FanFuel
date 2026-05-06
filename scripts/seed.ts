@@ -108,6 +108,46 @@ async function seed() {
 			steps: ['Spread hummus on tortilla', 'Layer turkey, lettuce, tomato, and cucumber', 'Roll tightly and slice in half'],
 			category: 'lunch', prepTime: 10, calories: 380, protein: 30, carbs: 35,
 			activityTags: ['rest', 'recovery', 'cardio']
+		},
+		{
+			title: 'Stir-Fry Tofu & Vegetables',
+			description: 'Light dinner with plant protein – ideal for rest and recovery days.',
+			ingredients: ['Firm tofu (200g)', 'Bell peppers (2)', 'Zucchini (1)', 'Soy sauce (2 tbsp)', 'Sesame seeds (1 tbsp)', 'Jasmine rice (150g)'],
+			steps: ['Press and cube tofu', 'Stir-fry vegetables in sesame oil', 'Add tofu and soy sauce', 'Serve over jasmine rice', 'Garnish with sesame seeds'],
+			category: 'dinner', prepTime: 25, calories: 520, protein: 28, carbs: 55,
+			activityTags: ['rest', 'recovery']
+		},
+		{
+			title: 'Quinoa Power Bowl',
+			description: 'Nutrient-dense lunch with complete protein from quinoa and chickpeas.',
+			ingredients: ['Quinoa (150g)', 'Chickpeas (100g)', 'Spinach (50g)', 'Feta cheese (30g)', 'Cherry tomatoes (80g)', 'Tahini dressing (2 tbsp)'],
+			steps: ['Cook quinoa according to package', 'Roast chickpeas with spices', 'Assemble bowl with spinach base', 'Top with quinoa, chickpeas, tomatoes, feta', 'Drizzle with tahini'],
+			category: 'lunch', prepTime: 25, calories: 550, protein: 25, carbs: 65,
+			activityTags: ['match', 'gym']
+		},
+		{
+			title: 'Overnight Oats',
+			description: 'Prep the night before – perfect grab-and-go breakfast for cardio mornings.',
+			ingredients: ['Oats (80g)', 'Chia seeds (1 tbsp)', 'Almond milk (200ml)', 'Maple syrup (1 tsp)', 'Mango (100g)'],
+			steps: ['Mix oats, chia seeds, and almond milk', 'Add maple syrup and stir', 'Refrigerate overnight', 'Top with fresh mango in the morning'],
+			category: 'breakfast', prepTime: 5, calories: 390, protein: 12, carbs: 62,
+			activityTags: ['cardio', 'match']
+		},
+		{
+			title: 'Grilled Chicken Salad',
+			description: 'High-protein dinner salad with Mediterranean flavors.',
+			ingredients: ['Chicken breast (180g)', 'Mixed greens (100g)', 'Cucumber (1)', 'Olives (30g)', 'Olive oil (1 tbsp)', 'Lemon juice'],
+			steps: ['Season and grill chicken breast', 'Chop vegetables', 'Toss greens with olive oil and lemon', 'Slice chicken and arrange on top', 'Add olives'],
+			category: 'dinner', prepTime: 20, calories: 480, protein: 42, carbs: 12,
+			activityTags: ['gym', 'cardio']
+		},
+		{
+			title: 'Energy Balls',
+			description: 'No-bake snack perfect for quick energy between training sessions.',
+			ingredients: ['Dates (100g)', 'Oats (50g)', 'Peanut butter (2 tbsp)', 'Cocoa powder (1 tbsp)', 'Coconut flakes (20g)'],
+			steps: ['Blend dates in food processor', 'Mix in oats, peanut butter, and cocoa', 'Roll into balls', 'Coat with coconut flakes', 'Refrigerate 30 min'],
+			category: 'snack', prepTime: 15, calories: 180, protein: 5, carbs: 25,
+			activityTags: ['rest', 'recovery']
 		}
 	];
 

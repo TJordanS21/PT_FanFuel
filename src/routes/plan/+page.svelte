@@ -5,7 +5,13 @@
 	let showForm = $state(false);
 	let editingId = $state<string | null>(null);
 
-	const activityTypes = ['gym', 'match', 'recovery', 'rest', 'cardio'];
+	const activityTypes = [
+		{ value: 'gym', label: '💪 Gym', color: '#ff6b35' },
+		{ value: 'match', label: '🏆 Match', color: '#e91e63' },
+		{ value: 'recovery', label: '🧘 Recovery', color: '#4caf50' },
+		{ value: 'rest', label: '😴 Rest', color: '#9e9e9e' },
+		{ value: 'cardio', label: '🏃 Cardio', color: '#2196f3' }
+	];
 </script>
 
 <section class="plan-page">
@@ -35,7 +41,7 @@
 					Type
 					<select name="type" required>
 						{#each activityTypes as t}
-							<option value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
+							<option value={t.value}>{t.label}</option>
 						{/each}
 					</select>
 				</label>
@@ -68,7 +74,7 @@
 								<input name="title" value={activity.title} required />
 								<select name="type">
 									{#each activityTypes as t}
-										<option value={t} selected={t === activity.type}>{t}</option>
+										<option value={t.value} selected={t.value === activity.type}>{t.label}</option>
 									{/each}
 								</select>
 								<input name="date" type="date" value={activity.date} required />

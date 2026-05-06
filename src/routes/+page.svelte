@@ -185,14 +185,15 @@
 	}
 
 	.dashboard-extras > :global(*) {
-		min-height: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	@media (max-width: 768px) {
 		.dashboard-extras { grid-template-columns: 1fr; }
-		.meals-grid { grid-template-columns: repeat(2, 1fr); }
+		.meals-grid { grid-template-columns: 1fr; }
 		.hero h1 { font-size: 1.6rem; }
 	}
 </style>
