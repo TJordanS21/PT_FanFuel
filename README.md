@@ -62,8 +62,21 @@
 
 ### 3.3 Decide
 
-- **Gewählte Variante & Begründung:** _[wird ergänzt]_
-- **End-to-End-Ablauf:** _[wird ergänzt]_
+- **Gewählte Variante & Begründung:**
+  1. Art der Navigation: Ich habe mich für eine Top-Navigation entschieden (Plan,
+Progress, Learn), da dies dem Standard moderner Web-Applikationen entspricht
+und eine intuitive Bedienung auf Desktop-Geräten ermöglicht.
+  2. Mobile vs. Desktop: Das Mockup wurde für Desktop optimiert. Dies erlaubt eine
+übersichtliche Darstellung komplexer Daten wie des "Weekly Plan" und der
+Performance-Diagramme auf einer einzigen Seite ohne übermässiges Scrollen.
+  3. Visual Design: Das Design ist zweckmässig und klar strukturiert. Ich nutze Karten-
+Layouts für Mahlzeiten, um die visuelle Trennung der Informationen zu unterstützen,
+was die Implementierung in SvelteKit (Komponenten-basiert) vereinfacht.
+  4. Interaktive Elemente: Schieberegler im "Mood Board" und klickbare Rezept-Karten
+demonstrieren den geplanten Datenfluss und die Interaktivität des späteren
+Prototyps.
+- **End-to-End-Ablauf:** <img width="468" height="253" alt="image" src="https://github.com/user-attachments/assets/84b2d9e5-e7bc-417e-ad0f-41e00bf4ce64" />
+
 - **Mockup:**
 
 <img width="420" alt="Mockup Dashboard" src="https://github.com/user-attachments/assets/1f8b2f54-746b-4527-89a5-40d2a6dd2278" />
